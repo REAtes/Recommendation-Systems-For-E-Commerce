@@ -1,5 +1,7 @@
 # ### Data Preparation
-# 1. Load the dataset and prepare it for the next steps.
+# 1. Load the dataset, which includes customer purchase history.
+# 2. Perform data cleaning and filtering to remove outliers, negative values, and rare items.
+# 3. Prepare the data for the ARL algorithm, ensuring it's in a suitable format.
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -41,7 +43,6 @@ df = df[df["Quantity"] > 0]
 def num_summary(dataframe):
     num_count = len(num_cols)
 
-    # Her bir sayısal değişken için bir satır ve iki sütunlu subplotlar oluşturun
     fig, axes = plt.subplots(num_count, 2, figsize=(12, 4 * num_count))
     plt.subplots_adjust(left=0.1, right=0.9, hspace=0.5)
 
@@ -79,7 +80,9 @@ replace_with_thresholds(df, "Quantity")
 num_summary(df)
 
 
-# ###
+# ### Apriori Algorithm
+# 1. Use the Apriori algorithm to discover association rules among the purchased products.
+# 2. Filter the rules based on desired support and confidence levels.
 
 df_ger = df[df['Country'] == "Germany"]
 ger_invoice_df = df_ger.groupby("Invoice")["Description"].apply(list).reset_index(name="GermanUserCart")
@@ -104,7 +107,9 @@ def check_id(dataframe, stock_code):
         print("This product isn't in the stock")
 
 
-# ###
+# ### Recommendations
+# 1. Implement the `arl_recommender` function to recommend products to customers based on their previous purchases.
+# 2. Provide recommendations for specific products (e.g., "PACK OF 6 SKULL PAPER CUPS").
 
 # for User1
 product_id = 21987
