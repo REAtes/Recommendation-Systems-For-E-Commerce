@@ -18,3 +18,23 @@ The Online Retail II dataset contains online sales transactions for a retail com
 This dataset can be utilized for various analyses, predictions, and data mining projects.
 
 ## Task
+
+### Data Preparation
+1. Load the dataset, which includes customer purchase history.
+2. Perform data cleaning and filtering to remove outliers, negative values, and rare items.
+3. Prepare the data for the ARL algorithm, ensuring it's in a suitable format.
+
+### Apriori Algorithm
+1. Use the Apriori algorithm to discover association rules among the purchased products.
+2. Filter the rules based on desired support and confidence levels.
+
+### Recommendations
+1. Implement the `arl_recommender` function to recommend products to customers based on their previous purchases.
+2. Provide recommendations for specific products (e.g., "PACK OF 6 SKULL PAPER CUPS").
+
+## Results
+
+The ARL-based recommender system provides valuable product recommendations to customers based on their purchase history. By analyzing associations between products, this system helps businesses suggest complementary or relevant items to customers, potentially increasing sales and customer satisfaction.
+
+Based on the `Confidence metric`, I can make recommendations to customers by suggesting products that are compatible with their shopping baskets. This can lead to increased customer satisfaction as they receive personalized recommendations and individualized promotions.
+Using the `Lift metric`, I can recommend products that have a strong association with the items that customers usually purchase. By encouraging cross-selling and suggesting complementary products, I can enhance the shopping experience for customers and potentially increase sales.
